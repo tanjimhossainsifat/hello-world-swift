@@ -46,26 +46,48 @@
                                 <color key="textColor" red="0.93831449749999996" green="0.31389695410000001" blue="0.3787152171" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aSp-TH-mGv">
+                                <rect key="frame" x="112.5" y="364" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TMI-hl-ogw"/>
+                                    <constraint firstAttribute="width" constant="150" id="xU0-Qs-Yvm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nlq-ew-6mU" firstAttribute="top" secondItem="At0-P3-ZOQ" secondAttribute="bottom" constant="20" id="GIn-TE-GXc"/>
                             <constraint firstItem="At0-P3-ZOQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="HFw-k9-eMZ"/>
                             <constraint firstItem="nlq-ew-6mU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kbf-hX-cjo"/>
                             <constraint firstItem="fqf-09-Y2W" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QWj-ME-CyO"/>
                             <constraint firstItem="At0-P3-ZOQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yev-b7-t7t"/>
+                            <constraint firstItem="aSp-TH-mGv" firstAttribute="top" secondItem="fqf-09-Y2W" secondAttribute="bottom" constant="20" id="brG-WE-doh"/>
+                            <constraint firstItem="aSp-TH-mGv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jr2-3r-sUr"/>
                             <constraint firstItem="fqf-09-Y2W" firstAttribute="top" secondItem="nlq-ew-6mU" secondAttribute="bottom" constant="50" id="oFI-pQ-qvr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cJV-ph-XY8" appends="YES" id="duc-7o-YtW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="inputLabel" destination="At0-P3-ZOQ" id="YlJ-Rx-Ixo"/>
                         <outlet property="inputTextField" destination="nlq-ew-6mU" id="QQ5-yJ-POX"/>
                         <outlet property="outputLabel" destination="fqf-09-Y2W" id="Rbl-Md-eko"/>
+                        <outlet property="photoView" destination="aSp-TH-mGv" id="3hQ-Xm-TC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cJV-ph-XY8">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="cLx-51-adx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="338" height="340"/>
+    </resources>
 </document>
